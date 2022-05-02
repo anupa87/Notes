@@ -1,0 +1,36 @@
+{
+  "note": [
+    {
+      "id": "1",
+      "firstname": "Rajita",
+      "lastname": "Thapa",
+      "phone": "12344567",
+      "role": "student",
+      "message": "some important message here"
+    },
+    {
+      "id": "2",
+      "firstname": "Itishree",
+      "lastname": "Ghimire",
+      "phone": "12344567",
+      "role": "student",
+      "message": "some important message here"
+    },
+    {
+      "id": "3",
+      "firstname": "Sadikxa",
+      "lastname": "Adhikari",
+      "phone": "12344567",
+      "role": "student",
+      "message": "some important message here"
+    },
+    {
+      "firstname": "Sanju",
+      "lastname": "KC",
+      "phone": "123449559",
+      "role": "other",
+      "message": "nnnnnnnnn",
+      "id": "JMJu4sv"
+    }
+  ]
+}
