@@ -1,7 +1,7 @@
 {
   "note": [
     {
-      "id": "1",
+      "id": 1,
       "firstname": "Rajita",
       "lastname": "Thapa",
       "phone": "12344567",
@@ -9,7 +9,7 @@
       "message": "some important message here"
     },
     {
-      "id": "2",
+      "id": 2,
       "firstname": "Itishree",
       "lastname": "Ghimire",
       "phone": "12344567",
@@ -17,28 +17,20 @@
       "message": "some important message here"
     },
     {
-      "id": "3",
+      "id": 3,
       "firstname": "Sadikxa",
       "lastname": "Adhikari",
-      "phone": "12344567",
+      "phone": "123445678",
       "role": "student",
       "message": "some important message here"
     },
     {
-      "firstname": "Sanju",
+      "firstname": "Saju",
       "lastname": "KC",
-      "phone": "123449559",
-      "role": "other",
-      "message": "nnnnnnnnn",
-      "id": "JMJu4sv"
-    },
-    {
-      "firstname": "ffff",
-      "lastname": "ffff",
-      "phone": "ffff",
+      "phone": "44546736236",
       "role": "student",
-      "message": "ffff",
-      "id": "iV-A7p5"
+      "message": "sdfsfsfds",
+      "id": 4
     }
   ]
 }

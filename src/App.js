@@ -77,7 +77,7 @@ class App extends Component {
   };
   updatePutHandler = (id) => {
     axios
-      .put(`http://localhost:3001/note/$(id)`, this.state.currentNote)
+      .put(`http://localhost:3001/note/${id}`, this.state.currentNote)
       .then((res) => res.data);
   };
 
