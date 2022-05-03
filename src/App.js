@@ -5,6 +5,7 @@ import Form from "./components/Form";
 import View from "./components/View";
 import Popup from "./components/Popup";
 import List from "./components/List";
+import EditForm from "./components/EditForm";
 
 class App extends Component {
   state = {
@@ -16,7 +17,9 @@ class App extends Component {
       message: "",
     },
     showPopup: false,
+    updatePopup: false,
     data: [],
+    currentNote: {},
   };
 
   componentDidMount() {
@@ -49,20 +52,60 @@ class App extends Component {
     this.closeHandler();
   };
 
+  deleteHandler = (id) => {
+    // console.log("delete id, id");
+    axios.delete(`http://localhost:3001/note/${id}`).then((res) => {
+      const notes = this.state.data.filter((item) => item.id !== id);
+      this.setState({ data: notes });
+    });
+  };
+
+  updateHandler = (item) => {
+    this.setState({
+      updatePopup: true,
+      currentNote: item,
+    });
+  };
+
+  inputUpdateHandler = (e) => {
+    this.setState({
+      currentNote: {
+        ...this.state.currentNote,
+        [e.target.name]: e.target.value,
+      },
+    });
+  };
+  updatePutHandler = (id) => {
+    axios
+      .put(`http://localhost:3001/note/$(id)`, this.state.currentNote)
+      .then((res) => res.data);
+  };
+
   render() {
     // console.log(this.state.data);
     return (
       <>
         <div className="form_area">
+          {this.state.updatePopup && (
+            <EditForm
+              {...this.state.currentNote}
+              change={this.inputUpdateHandler}
+              submit={() => this.updatePutHandler(this.state.currentNote.id)}
+            />
+          )}
           <Form change={this.inputHandler} submit={this.popUpHandler} />
           <View {...this.state.inputData} />
         </div>
-        <List data={this.state.data} />
+        <List
+          data={this.state.data}
+          delete={this.deleteHandler}
+          edit={this.updateHandler}
+        />
         {this.state.showPopup && (
-          <Popup 
-          close={this.closeHandler} 
-          {...this.state.inputData}
-          submit= {this.submitHandler} 
+          <Popup
+            close={this.closeHandler}
+            {...this.state.inputData}
+            submit={this.submitHandler}
           />
         )}
       </>
